@@ -1,4 +1,7 @@
 # Altitudist
+<div>
+  <img alt="Altitudist" height="400" src="https://i.ibb.co/YWYF7JG/Screenshot-2024-05-10-at-4-57-50-AM.png" />
+</div>
 Welcome to Altitudist, the ultimate dating/friend finder app for outdoor enthusiasts! This full-stack MERN app allows users to connect with like-minded individuals who share a passion for activities such as hiking, boating, skiing, and snowboarding. With a focus on detailed profiles, location-based browsing, and secure messaging, Altitudist is the perfect platform to find your next adventure buddy.
 
 ## Features
