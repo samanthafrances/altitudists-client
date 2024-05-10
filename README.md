@@ -24,3 +24,10 @@ Welcome to Altitudist, the ultimate dating/friend finder app for outdoor enthusi
 - Messaging Model
 - Destinations Model
 
+## Resources: 
+- [ERD](https://lucid.app/lucidchart/98ba1ef3-186b-486d-8ca9-fbeaa744c7dd/edit?invitationId=inv_85bfd777-8d83-4601-a4e2-4b1d26d0a5dd)
+- [CRD](https://lucid.app/lucidchart/b32d83d8-8152-47e7-9cb9-406daa7a49b8/edit?viewport_loc=-16%2C-96%2C2201%2C1259%2C0_0&invitationId=inv_22dead7b-8b63-44d5-9280-578183aea0af)
+- [Trello](https://trello.com/invite/b/KrsRvsDb/ATTIedfd0cefe7b5143fe05cbfc4eeabc29936F385F2/altitudist)
+
+
+
