@@ -1,36 +1,8 @@
-# Altitudists
-<div>
-  <img alt="Altitudists" height="400" src="https://i.ibb.co/bPnsFTR/Screenshot-2024-05-11-at-2-19-42-PM.png" />
-</div>
-Welcome to Altitudists, the ultimate app for outdoor enthusiasts. This full-stack MERN app allows users to connect with like-minded individuals who share a passion for activities such as hiking, boating, skiing, and snowboarding. With a focus on detailed profiles, location-based browsing, and secure messaging, Altitudist is the perfect platform to find your next adventure buddy.
+# React + Vite
 
-## Features
-- User authentication with Google OAuth
-- Detailed user profiles
-- Browse locations and view other users who visit those locations
-- Request to message other users who visited specific locations
-- Secure private messaging with acceptance-based connections
-- CRUD operations for user and messaging models
-- Esri ArcGIS map integration for location-based browsing
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Tech Stack
-- MongoDB
-- Express.js
-- React.js
-- Node.js
-- Google OAuth
-- Esri ArcGIS
-- Heroku
+Currently, two official plugins are available:
 
-## Data Models
-- User Model
-- Messaging Model
-- Destinations Model
-
-## Resources: 
-- [ERD](https://lucid.app/lucidchart/98ba1ef3-186b-486d-8ca9-fbeaa744c7dd/edit?invitationId=inv_85bfd777-8d83-4601-a4e2-4b1d26d0a5dd)
-- [CRD](https://lucid.app/lucidchart/b32d83d8-8152-47e7-9cb9-406daa7a49b8/edit?viewport_loc=-16%2C-96%2C2201%2C1259%2C0_0&invitationId=inv_22dead7b-8b63-44d5-9280-578183aea0af)
-- [Trello](https://trello.com/invite/b/KrsRvsDb/ATTIedfd0cefe7b5143fe05cbfc4eeabc29936F385F2/altitudist)
-
-
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
