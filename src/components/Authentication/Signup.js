@@ -67,6 +67,7 @@ onClick={submitHandler}
     Sign Up
 </Button>
   </VStack>
+  
 };
 
 export default Signup
