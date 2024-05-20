@@ -114,15 +114,124 @@ const sendMessage = async (event) => {
 
     }, []);
 
-
     const typingHandler = (e) => {
         setNewMessage(e.target.value);
-    };
-    return (
-        { 
+        if (!socketConnected) return;
+        
+        if (!typing) {
+      setTyping(true);
+      socket.emit("typing", selectedChat._id);
+    }
+    let lastTypingTime = new Date().getTime();
+    var timerLength = 3000;
+    setTimeout(() => {
+      var timeNow = new Date().getTime();
+      var timeDiff = timeNow - lastTypingTime;
+      if (timeDiff >= timerLength && typing) {
+        socket.emit("stop typing", selectedChat._id);
+        setTyping(false);
+      }
+    }, timerLength);
+};
 
-        })
-}
+return (
+    <>
+      {selectedChat ? (
+        <>
+          <Text
+            fontSize={{ base: "25px", md: "35px" }}
+            pb={3}
+            px={2}
+            w="100%"
+            fontFamily=""
+            d="flex"
+            justifyContent={{ base: "space-between" }}
+            alignItems="center"
+          >
+            <IconButton
+              d={{ base: "flex", md: "none" }}
+              icon={<ArrowBackIcon />}
+              onClick={() => setSelectedChat("")}
+            />
+            {messages &&
+              (!selectedChat.isGroupChat ? (
+                <>
+                  {getSender(user, selectedChat.users)}
+                  <ProfileModal
+                    user={getSenderFull(user, selectedChat.users)}
+                  />
+                </>
+              ) : (
+                <>
+                  {selectedChat.chatName.toUpperCase()}
+                  <UpdateGroupChatModal
+                    fetchMessages={fetchMessages}
+                    fetchAgain={fetchAgain}
+                    setFetchAgain={setFetchAgain}
+                  />
+                </>
+              ))}
+          </Text>
+          <Box
+            d="flex"
+            flexDir="column"
+            justifyContent="flex-end"
+            p={3}
+            bg="#FFFFFF"
+            w="100%"
+            h="100%"
+            borderRadius="lg"
+            overflowY="hidden"
+          >
+            {loading ? (
+              <Spinner
+                size="lg"
+                w={15}
+                h={15}
+                alignSelf="center"
+                margin="auto"
+              />
+            ) : (
+              <div className="messages">
+                <ScrollableChat messages={messages} />
+              </div>
+            )}
+            <FormControl
+              onKeyDown={sendMessage}
+              id="first-name"
+              isRequired
+              mt={3}
+            >
+              {istyping ? (
+                <div>
+                  <Lottie
+                    options={defaultOptions}
+                    width={60}
+                    style={{ marginBottom: 10, marginLeft: 0 }}
+                  />
+                </div>
+              ) : (
+                <></>
+              )}
+              <Input
+                variant="filled"
+                bg="#FFFFFF"
+                placeholder="Write message"
+                value={newMessage}
+                onChange={typingHandler}
+              />
+            </FormControl>
+          </Box>
+        </>
+      ) : (
+        <Box d="flex" alignItems="center" justifyContent="center" h="100%">
+          <Text fontSize="2xl" pb={3} fontFamily="">
+            Select user to begin chat
+          </Text>
+        </Box>
+      )}
+    </>
+  );
+};
 
-
-    export default SingleChat;
+export default SingleChat;
