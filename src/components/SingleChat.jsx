@@ -42,6 +42,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             })
 
         }
+    }
     
             console.log(messages);
 
@@ -65,6 +66,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         { 
 
         })
-    
+}
 
 
+    export default SingleChat;
