@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import axios from 'axios';
 
 const Chat = () => {
@@ -22,4 +22,4 @@ const [chats, setChats] = useState([]);
     );
 };
 
-export default Chat;
+export default Chat;*/

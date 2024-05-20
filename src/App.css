@@ -1,4 +1,3 @@
-@import url("");
 @import "https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css";
 
 .App{
@@ -9,4 +8,4 @@
     background-size: cover;
     color:black;
 
-}
+} 

@@ -1,7 +1,8 @@
 import { Button, Input } from '@chakra-ui/react';
 import React, { useState } from "react";
 import { VStack } from "@chakra-ui/layout";
-import { FormControl, FormLabel } from "@chakra-ui/form-control"
+import { FormControl, FormLabel } from "@chakra-ui/form-control";
+import { useToast } from "@chakra-ui/toast";
 
 const Signup = () => {
     const [show, setShow] = useState(false);
@@ -10,10 +11,54 @@ const Signup = () => {
     const [password, setPassword] = useState("");
     const [confirmpassword, setConfirmpassword] = useState("");
     const [photo, setPhoto ] = useState("");
-    
+    const toast = useToast()
     const handleClick = () => setShow(!show);
-    const postDetails = (photos) => {};
     const submitHandler = () => {};
+
+
+    const postDetails = (photos) => {
+        setPhotoLoading(true);
+        if (photos === undefined) {
+          toast({
+            title: "Please Select a Photo",
+            status: "warning",
+            duration: 5000,
+            isClosable: true,
+            position: "bottom",
+          });
+          return;
+        }
+        if (photos.type === "image/jpeg" || pics.type === "image/png") {
+          const data = new FormData();
+          data.append("file", photos);
+          data.append("upload_preset", "chat");
+          data.append("cloud_name", "samfrances");
+          fetch("https://api.cloudinary.com/v1_1/samfrances/image/upload", {
+            method: "post",
+            body: data,
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              setPhoto(data.url.toString());
+              console.log(data.url.toString());
+              setPhotoLoading(false);
+            })
+            .catch((err) => {
+              console.log(err);
+              setPhotoLoading(false);
+            });
+        } else {
+          toast({
+            title: "Please Select a Photo",
+            status: "warning",
+            duration: 5000,
+            isClosable: true,
+            position: "bottom",
+          });
+          setPhotoLoading(false);
+          return;
+        }
+      };
 
   return <VStack spacing='4px' color="black">
     <FormControl id='first-name' isRequired>
