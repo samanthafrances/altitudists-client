@@ -1,20 +1,88 @@
 import { Button, Input } from '@chakra-ui/react';
 import React, { useState } from "react";
 import { VStack } from "@chakra-ui/layout";
+import axios from "axios";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { useToast } from "@chakra-ui/toast";
+import { useHistory } from "react-router";
+import { useState } from "react";
 
 const Signup = () => {
     const [show, setShow] = useState(false);
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmpassword, setConfirmpassword] = useState("");
-    const [photo, setPhoto ] = useState("");
-    const toast = useToast()
     const handleClick = () => setShow(!show);
-    const submitHandler = () => {};
+    const toast = useToast();
+    const history = useHistory();
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const [confirmpassword, setConfirmpassword] = useState();
+    const [photo, setPhoto ] = useState();
+    const [photoLoading, setPhotoLoading] = useState(false);
 
+
+    const submitHandler = async () => {
+      setPhotoLoading(true);
+      if (!name || !email || !password || !confirmpassword) {
+      toast({
+        title: "Please Complete Submission",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setPhotoLoading(false);
+      return;
+    }
+    if (password !== confirmpassword) {
+      toast({
+        title: "Passwords Do Not Match",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      return;
+    }
+    console.log(name, email, password, photo);
+    try {
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
+      const { data } = await axios.post(
+        "/api/user",
+        {
+          name,
+          email,
+          password,
+          photo,
+        },
+        config
+      );
+      console.log(data);
+      toast({
+        title: "Registration Successful",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      setPicLoading(false);
+      history.push("/chats");
+    } catch (error) {
+      toast({
+        title: "Error Occured!",
+        description: error.response.data.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setPhotoLoading(false);
+    }
+  };
 
     const postDetails = (photos) => {
         setPhotoLoading(true);
@@ -94,7 +162,7 @@ const Signup = () => {
     </FormControl>
 
     <FormControl id="photo" isRequired>
-        <FormLabel>Upload Your Photo</FormLabel>
+        <FormLabel>Please Upload Your Photo</FormLabel>
         <Input
         type="file"
         p={1.5}
@@ -108,6 +176,7 @@ colorScheme="black"
 width="100%"
 style={{ marginTop: 15 }}
 onClick={submitHandler}
+isLoading={photoLoading}
 >
     Sign Up
 </Button>
