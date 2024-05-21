@@ -38,8 +38,8 @@ function SideDrawer() {
 
   const {
     setSelectedChat,
-    user,
     notification,
+    user,
     setNotification,
     chats,
     setChats,
