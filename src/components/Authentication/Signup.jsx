@@ -4,7 +4,7 @@ import { VStack } from "@chakra-ui/layout";
 import axios from "axios";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { useToast } from "@chakra-ui/toast";
-import { useHistory } from "react-router";
+//import { useHistory } from "react-router";
 
 const Signup = () => {
     const [show, setShow] = useState(false);
