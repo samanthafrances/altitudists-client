@@ -23,11 +23,9 @@ Welcome to Altitudists, the ultimate friend-finder app for outdoor enthusiasts. 
 - JWT.io
 - Google OAuth
 - Esri ArcGIS
-- AWS 
 
 ## Data Models
 - User Model
-- User Profile Model
 - Message Model
 - Chat Model
 - Destinations Model
