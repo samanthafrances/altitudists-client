@@ -7,7 +7,7 @@ import {
     isSameSender,
     isSameSenderMargin,
 
-} from "../config/ChatLogics";
+} from "../config/chatLogics";
 import { ChatState } from "../Context/ChatProvider";
 
 
