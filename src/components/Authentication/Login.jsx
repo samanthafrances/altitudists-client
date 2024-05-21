@@ -5,7 +5,7 @@ import { ChatState } from "../../Context/ChatProvider";
 import { VStack } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { useToast } from "@chakra-ui/react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 
 const Login = () => {
