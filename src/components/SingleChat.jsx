@@ -1,22 +1,23 @@
-import "./styles.css";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import scrollableChat from "./ScrollableChat";
-import io from "socket.io-client"
-import Lottie from "react-lottie";
-import animationData from "../animations/typing.json";
-import ProfileModal from "./miscellaneous/ProfileModal";
-import { ArrowBackIcon } from "@chakra-ui/icons";
-import { getSender, getSenderFull } from "../config/ChatLogics";
-import { IconButton, Spinner, useToast } from "@chakra-ui/react";
 import { FormControl } from "@chakra-ui/form-control";
 import { Input } from "@chakra-ui/input";
-import io from "socket.io-client";
-import { ChatState } from "../Context/ChatProvider";
-import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
+import { Box, Text } from "@chakra-ui/layout";
+import "./styles.css";
+import { IconButton, Spinner, useToast } from "@chakra-ui/react";
+import { getSender, getSenderFull } from "../config/ChatLogics";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { ArrowBackIcon } from "@chakra-ui/icons";
+import ProfileModal from "./miscellaneous/ProfileModal";
+import ScrollableChat from "./ScrollableChat";
+import Lottie from "react-lottie";
+import animationData from "../animations/typing.json";
 
-const ENDPOINT = "http://localhost:4000";
+import io from "socket.io-client";
+import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
+import { ChatState } from "../Context/ChatProvider";
+const ENDPOINT = "https://altitudists-backend-bd7306004527.herokuapp.com";
 var socket, selectedChatCompare;
+
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     const toast = useToast();
@@ -114,6 +115,29 @@ const sendMessage = async (event) => {
 
     }, []);
 
+    useEffect(() => {
+      fetchMessages();
+  
+      selectedChatCompare = selectedChat;
+    }, [selectedChat]);
+
+    useEffect(() => {
+      socket.on("message recieved", (newMessageRecieved) => {
+        if (
+          !selectedChatCompare ||
+          selectedChatCompare._id !== newMessageRecieved.chat._id
+        ) {
+          if (!notification.includes(newMessageRecieved)) {
+            setNotification([newMessageRecieved, ...notification]);
+            setFetchAgain(!fetchAgain);
+          }
+        } else {
+          setMessages([...messages, newMessageRecieved]);
+        }
+      });
+    });
+
+
     const typingHandler = (e) => {
         setNewMessage(e.target.value);
         if (!socketConnected) return;
@@ -143,7 +167,7 @@ return (
             pb={3}
             px={2}
             w="100%"
-            fontFamily=""
+            fontFamily="Montserrat"
             d="flex"
             justifyContent={{ base: "space-between" }}
             alignItems="center"
@@ -186,8 +210,8 @@ return (
             {loading ? (
               <Spinner
                 size="lg"
-                w={15}
-                h={15}
+                w={20}
+                h={20}
                 alignSelf="center"
                 margin="auto"
               />
@@ -206,8 +230,8 @@ return (
                 <div>
                   <Lottie
                     options={defaultOptions}
-                    width={60}
-                    style={{ marginBottom: 10, marginLeft: 0 }}
+                    width={70}
+                    style={{ marginBottom: 15, marginLeft: 0 }}
                   />
                 </div>
               ) : (
@@ -216,7 +240,7 @@ return (
               <Input
                 variant="filled"
                 bg="#FFFFFF"
-                placeholder="Write message"
+                placeholder="Write a message"
                 value={newMessage}
                 onChange={typingHandler}
               />
@@ -225,7 +249,7 @@ return (
         </>
       ) : (
         <Box d="flex" alignItems="center" justifyContent="center" h="100%">
-          <Text fontSize="2xl" pb={3} fontFamily="">
+          <Text fontSize="3xl" pb={3} fontFamily="Montserrat">
             Select user to begin chat
           </Text>
         </Box>
