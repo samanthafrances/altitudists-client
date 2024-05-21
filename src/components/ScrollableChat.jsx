@@ -8,8 +8,7 @@ import {
     isSameSenderMargin,
 
 } from "../config/ChatLogics";
-import { ChatState } from "../Context/ChatProvider";
-
+import { getSender } from "../config/ChatLogics";
 
 const ScrollableChat = ({ messages }) => {
     const { user } = ChatState();
