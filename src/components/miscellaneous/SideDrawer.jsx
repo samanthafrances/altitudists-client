@@ -28,12 +28,22 @@ import { Spinner } from "@chakra-ui/spinner";
 import ProfileModal from "./ProfileModal";
 import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
-function SideDrawer() {
+const SideDrawer = () => {
+  const history = useHistory();
+
+  useEffect(() => {
+    history.push('/home');
+  }, [history]);
+
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState(false);
+
+};
 
   const {
     setSelectedChat,
@@ -218,6 +228,6 @@ function SideDrawer() {
       </Drawer>
     </>
   );
-}
+
 
 export default SideDrawer;
