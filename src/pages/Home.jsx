@@ -1,20 +1,19 @@
-import React from 'react';
 import {
-  Container,
   Box,
-  Text,
+  Container,
   Tab,
-  Tabs,
+  TabList,
   TabPanel,
   TabPanels,
-  TabList,
+  Tabs,
+  Text,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
-//import { useHistory } from "react-router";
-import Login from '../components/Authentication/Login'
-import Signup from '../components/Authentication/Signup';
+import { useHistory } from "react-router";
+import Login from "../components/Authentication/Login";
+import Signup from "../components/Authentication/Signup";
 
-function Homepage() {
+function Home() {
   const history = useHistory();
 
   useEffect(() => {
@@ -24,23 +23,21 @@ function Homepage() {
   }, [history]);
 
   return (
-    <Container maxW='xl' centerContent>
+    <Container maxW="xl" centerContent>
       <Box
         d="flex"
         justifyContent="center"
         p={3}
-        bg={"white"}
+        bg="white"
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="5xl" fontFamily="Montserrat">
-          ALTITUDISTS
-        </Text>
+        <Text fontSize="4xl" fontFamily="Montserrat">Altitudists</Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" color="black" borderWidth="1px">
-        <Tabs variant="soft-rounded">
+      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+        <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>
             <Tab>Sign Up</Tab>
@@ -57,6 +54,6 @@ function Homepage() {
       </Box>
     </Container>
   );
-};
+}
 
 export default Home;
