@@ -55,8 +55,8 @@ const MyChats = ({ fetchAgain }) => {
           <Box
             pb={3}
             px={3}
-            fontSize={{ base: "30px", md: "25px" }}
-            fontFamily=""
+            fontSize={{ base: "28px", md: "30px" }}
+            fontFamily="Montserrat"
             d="flex"
             w="100%"
             justifyContent="space-between"
