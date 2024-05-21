@@ -6,10 +6,10 @@ const UserBadgeItem = ({ user, handleFunction, admin }) => {
       <Badge
         px={2}
         py={1}
-        borderRadius="md"
+        borderRadius="lg"
         m={1}
         mb={2}
-        fontSize={10}
+        fontSize={12}
         variant="solid"
         cursor="pointer"
         colorScheme="blue"
