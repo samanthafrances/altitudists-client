@@ -118,7 +118,6 @@ const MyChats = ({ fetchAgain }) => {
           </Box>
         </Box>
       );
-
 };
 
 export default MyChats;
