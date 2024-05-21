@@ -26,7 +26,7 @@ import { useToast } from "@chakra-ui/toast";
 import ChatLoading from "../ChatLoading";
 import { Spinner } from "@chakra-ui/spinner";
 import ProfileModal from "./ProfileModal";
-import { getSender } from "../../config/ChatLogics";
+import { getSender } from "..config/chatLogics";
 import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../Context/ChatProvider";
 
