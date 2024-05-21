@@ -1,15 +1,15 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { useEffect, useState } from "react";
+import { Route, Routes, NavLink, useParams } from "react-router-dom";
 import "./App.css";
-import { Route } from "react-router-dom";
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { ChakraProvider } from "@chakra-ui/react";
+import { Socket } from "socket.io-client";
 import Home from "./pages/Home";
-import Chat from "./pages/Chat";
+import Nav from "./components/Nav";
 
-const App = () => {
-    return (
-    <div className="App">
-        <Route path="/" component={Home} />
-        <Route path="/chats" component={Chat} />
-        </div>
-    );
-  }
 
 export default App;
