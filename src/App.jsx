@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { ChakraProvider } from "@chakra-ui/react";
 import Home from "./pages/Home";
-import Nav from "./components/Nav";
 
 const socket = Socket("https://altitudists-backend-bd7306004527.herokuapp.com/m");
 
