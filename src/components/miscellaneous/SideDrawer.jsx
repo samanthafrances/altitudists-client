@@ -26,11 +26,9 @@ import { useToast } from "@chakra-ui/toast";
 import ChatLoading from "../ChatLoading";
 import { Spinner } from "@chakra-ui/spinner";
 import ProfileModal from "./ProfileModal";
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../userAvatar/UserListItem";
-import { ChatState } from "../../Context/ChatProvider";
+import { ChatState } from "../Context/ChatProvider";
 
 function SideDrawer() {
   const [search, setSearch] = useState("");
