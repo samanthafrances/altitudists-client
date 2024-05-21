@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChatState } from "../Context/ChatProvider";
 import { Box, Stack, Text } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { AddIcon } from "@chakra-ui/icons";
-import { getSender } from "../config/ChatLogics.js";
+import { getSender } from "../config/ChatLogics";
 import { Button } from "@chakra-ui/react";
 import ChatLoading from "./ChatLoading";
 import GroupChatModal from "./miscellaneous/GroupChatModal";
