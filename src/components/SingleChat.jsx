@@ -18,7 +18,6 @@ import { ChatState } from "../Context/ChatProvider";
 const ENDPOINT = "https://altitudists-backend-bd7306004527.herokuapp.com";
 var socket, selectedChatCompare;
 
-
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     const toast = useToast();
     const [messages, setMessages] = useState([]);
