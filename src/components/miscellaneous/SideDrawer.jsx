@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Drawer, useDisclosure } from "@chakra-ui/react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar.jsx";
 
 const SideDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
