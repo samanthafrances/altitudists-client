@@ -1,6 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { useEffect, useState } from "react";
+import { Socket } from "socket.io-client";
+import React, { useEffect, useState } from "react";
 import { Route, Routes, NavLink, useParams } from "react-router-dom";
 import "./App.css";
 import axios from 'axios';
@@ -11,5 +10,25 @@ import { Socket } from "socket.io-client";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 
+const socket = Socket("https://altitudists-backend-bd7306004527.herokuapp.com/m");
+
+function App() {
+  useEffect(() => {
+    socket.connect();
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
+  return (
+    <ChakraProvider>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home socket={socket} />} />
+      </Routes>
+    </ChakraProvider>
+  );
+}
 
 export default App;
