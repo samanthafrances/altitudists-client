@@ -1,7 +1,6 @@
 import { io } from "socket.io-client";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Index from "./pages/index.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
