@@ -11,7 +11,6 @@ import {
 import { useEffect } from "react";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
-
 function Home() {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userInfo"));
