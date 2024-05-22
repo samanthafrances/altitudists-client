@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "main": "server.js",
   "type": "module",
+  "homepage": "https://altitudists-frontend-f7c210d67743.herokuapp.com/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
