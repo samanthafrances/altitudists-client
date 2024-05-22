@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Index from "./pages/index";
+import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <Index />
+      <Home />
     </div>
   );
 }

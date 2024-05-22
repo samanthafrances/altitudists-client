@@ -11,6 +11,7 @@ import {
 import { useEffect } from "react";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
+import "./App.css";
 
 function Home() {
   useEffect(() => {
@@ -55,4 +56,4 @@ function Home() {
   );
 }
 
-export default Index;
+export default Home;
