@@ -24,7 +24,7 @@ function App() {
     setUser(null);
     localStorage.clear();
   };
-
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
