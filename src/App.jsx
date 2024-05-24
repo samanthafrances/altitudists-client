@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { Route, Routes, NavLink, useParams } from "react-router-dom";
 import axios from "axios";
+import { CheckSession } from "./services/Auth.js";
+import { useEffect, useState } from "react";
+import { Route, Routes, NavLink, useParams } from "react-router-dom";
+import Nav from "./components/Nav";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import BuddyPass from "./pages/BuddyPass";
 import DestinationDetails from "./pages/DestinationDetails";
 import DestinationView from "./pages/DestinationView";
-import PinnedDestinations from "./pages/PinnedDestinations"
-import { CheckSession } from "./services/Auth.js";
-import Nav from "./components/Nav";
+import PinnedDestinations from "./pages/PinnedDestinations";
 
 function App() {
   const [user, setUser] = useState(null);
