@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 export const BASE_URL =
-  "https://altitudists-backend-bd7306004527.herokuapp.com/";
+  "https://altitudists-frontend-f7c210d67743.herokuapp.com/";
 
 const Client = Axios.create({ baseURL: BASE_URL });
 
