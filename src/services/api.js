@@ -16,4 +16,4 @@ Client.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-export { Client }; 
+export default Client;

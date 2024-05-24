@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Client from "../services/api";
+import Client from "../services/api"
 
 const RegisterForm = () => {
   const navigate = useNavigate();
