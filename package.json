@@ -1,5 +1,6 @@
 {
   "name": "altitudists-client",
+  "homepage": "https://altitudists-frontend-f7c210d67743.herokuapp.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
