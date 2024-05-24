@@ -1,0 +1,46 @@
+:root {
+    --card-bg: #4c4e5950;
+  }
+  
+  .bg-grey {
+    background: var(--card-bg);
+  }
+
+  .qr {
+    height: 200px;
+    width: 200px;
+  }
+  
+  .accordion {
+    margin-top: 54px;
+    padding-top: 24px;
+    border-top: 1px solid var(--card-bg);
+    cursor: pointer;
+  }
+  
+  .input-wrapper {
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--card-bg);
+    margin-bottom: 1rem;
+  }
+  
+  .signin {
+    height: 90vh;
+    justify-content: center;
+  }
+  
+  .signin > h1 {
+    margin-bottom: 44px;
+  }
+  .form-wrapper  .btn-primary {
+    margin-top: 34px;
+  }
+  
+  .home-container {
+    height: 60vh;
+    justify-content: space-between;
+  }
+  
+  .home-links h3 {
+    font-size: 34px;
+  }

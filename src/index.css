@@ -1,0 +1,160 @@
+body {
+    margin: 0 auto;
+    max-width: 428px;
+    min-width: 428px;
+    font-family: "europa", sans-serif;
+    background: black;
+  }
+  
+  .App {
+    overflow: scroll;
+    padding-bottom: 120px;
+    width: 100%;
+    background: linear-gradient(171deg, #1a1c28 19.07%, #03040c 115.29%);
+    color: white;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  a, button {
+    cursor: pointer
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-family: "europa", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-family: "europa", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+  }
+  
+  h3 {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  
+  p {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.5px;
+  }
+  
+  .caption {
+    font-family: Epilogue;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+  
+  .label {
+    font-family: Epilogue;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+  
+  nav {
+    display: flex;
+    max-width: 428px;
+    min-width: 428px;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    padding: 1.5rem 0;
+    background: #1a1c28;
+  }
+  
+  .icon-wrapper {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .max-container {
+    padding: 28px;
+    grid-area: full;
+  }
+  
+  .wrapper {
+    width: 100%;
+  }
+  
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .center-items {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .justify-btwn {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .align-center {
+    align-items: center;
+  }
+  
+  input {
+    background: none;
+    border: none;
+    width: 100%;
+    color: white;
+    outline: none;
+  }
+  
+  .btn-primary, a > button {
+    width: 100%;
+    padding: 1.2rem 0;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    background: var(--card-bg)
+  }
+  
+  input:focus {
+    border: none !important;
+  }
