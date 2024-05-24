@@ -46,16 +46,16 @@ function App() {
       <Nav user={user} handleLogOut={handleLogOut} />
       
       
-      <Routes>
-        <Route path="/" element={app} />
-        <Route path="/home" element={<Home user={user}/>} />
-        <Route path="/auth/register" element={<Register />} />
-        <Route path="/auth/login" element={<Login setUser={setUser} />} />
-        <Route path="/destinations" element={<DestinationView />} />
-        <Route path="/destinations/:id" element={<DestinationDetails />} />
-        <Route path="/pinneddestinations" element={<PinnedDestinations />} />
-        <Route path="/buddypass" element={<BuddyPass />} />
-      </Routes>
+<Routes>
+  <Route path="/auth/login" element={<Login setUser={setUser} />} />
+  <Route path="/auth/register" element={<Register />} />
+  <Route path="/" element={app} />
+  <Route path="/home" element={<Home user={user}/>} />
+  <Route path="/destinations" element={<DestinationView />} />
+  <Route path="/destinations/:id" element={<DestinationDetails />} />
+  <Route path="/pinneddestinations" element={<PinnedDestinations />} />
+  <Route path="/buddypass" element={<BuddyPass />} />
+</Routes>
     </div>
   );
 }
