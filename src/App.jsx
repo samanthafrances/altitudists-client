@@ -1,6 +1,6 @@
 import "./App.css";
 import axios from "axios";
-import { CheckSession } from "./services/Auth";
+import { CheckSession } from "./services/Auth.js";
 import { useEffect, useState } from "react";
 import { Route, Routes, NavLink, useParams } from "react-router-dom";
 import Nav from "./components/Nav";
