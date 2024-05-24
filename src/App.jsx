@@ -10,7 +10,7 @@ import BuddyPass from "./pages/BuddyPass";
 import DestinationDetails from "./pages/DestinationDetails";
 import DestinationView from "./pages/DestinationView";
 import PinnedDestinations from "./pages/PinnedDestinations";
-import { CheckSession } from "./services/Auth.js";
+import { CheckSession } from "./services/Auth";
 
 function App() {
   const [user, setUser] = useState(null);
