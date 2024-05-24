@@ -9,7 +9,7 @@ import BuddyPass from "./pages/BuddyPass";
 import DestinationDetails from "./pages/DestinationDetails";
 import DestinationView from "./pages/DestinationView";
 import PinnedDestinations from "./pages/PinnedDestinations"
-import { CheckSession } from "./services/Auth";
+import { CheckSession } from "./services/Auth.js";
 import Nav from "./components/Nav";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
     setUser(null);
     localStorage.clear();
   };
-  
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
