@@ -9,17 +9,17 @@ const Nav = (props) => {
   return (
     <nav>
       <NavLink to="/home">
-        <Icons icon={<FontAwesomeIcon icon="list" />} fill="white"/>
+      <FontAwesomeIcon icon="sign-out-alt" /> 
       </NavLink>
       <NavLink to="/pinneddestinations">
-  <Icons icon={<FontAwesomeIcon icon="star" />} fill="white"/>
+      <FontAwesomeIcon icon="sign-out-alt" /> 
 </NavLink>
-<NavLink to="/buddypass">
-  <Icons icon={<FontAwesomeIcon icon="ticket" />} fill="white"/>
+<NavLink to="/buddyPass">
+<FontAwesomeIcon icon="sign-out-alt" /> 
 </NavLink>
       <NavLink to="/">
         <div onClick={props.handleLogOut} user={props.user}>
-          <Icons icon={<FontAwesomeIcon icon="sign-out-alt" />} fill="white"/>
+        <FontAwesomeIcon icon="sign-out-alt" /> 
         </div>
       </NavLink>
     </nav>
