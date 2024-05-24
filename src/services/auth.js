@@ -27,5 +27,3 @@ export const CheckSession = async () => {
     throw error
   }
 }
-
-export default Auth;

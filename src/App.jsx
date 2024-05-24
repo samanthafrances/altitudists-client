@@ -1,6 +1,5 @@
 import "./App.css";
 import axios from "axios";
-import { CheckSession } from "./services/Auth.js";
 import { useEffect, useState } from "react";
 import { Route, Routes, NavLink, useParams } from "react-router-dom";
 import Nav from "./components/Nav";
@@ -11,6 +10,7 @@ import BuddyPass from "./pages/BuddyPass";
 import DestinationDetails from "./pages/DestinationDetails";
 import DestinationView from "./pages/DestinationView";
 import PinnedDestinations from "./pages/PinnedDestinations";
+import { CheckSession } from "./services/Auth.js";
 
 function App() {
   const [user, setUser] = useState(null);
