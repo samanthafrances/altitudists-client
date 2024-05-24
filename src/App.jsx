@@ -45,7 +45,6 @@ function App() {
       {/* {user ? <Nav user={user} handleLogout={handleLogOut} /> : null } */}
       <Nav user={user} handleLogOut={handleLogOut} />
       
-      
 <Routes>
   <Route path="/auth/login" element={<Login setUser={setUser} />} />
   <Route path="/auth/register" element={<Register />} />
