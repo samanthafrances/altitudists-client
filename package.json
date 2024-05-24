@@ -3,13 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://altitudists-frontend-f7c210d67743.herokuapp.com/",
   "scripts": {
+    "start": "serve -s dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "serve -s dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@arcgis/core": "^4.29.10",
