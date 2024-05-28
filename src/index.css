@@ -10,7 +10,7 @@ body {
     overflow: scroll;
     padding-bottom: 120px;
     width: 100%;
-    background: linear-gradient(171deg, #1a1c28 19.07%, #03040c 115.29%);
+    background-image: url("/background.png");
     color: white;
     background-repeat: no-repeat;
     height: 100vh;

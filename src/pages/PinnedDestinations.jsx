@@ -1,7 +1,12 @@
 import React from 'react';
+import axios from "axios";
 
 const PinnedDestinations = () => {
-  // component code here
+  return (
+    <div>
+      
+    </div>
+  )
 };
 
 export default PinnedDestinations;

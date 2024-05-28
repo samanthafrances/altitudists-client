@@ -13,10 +13,10 @@ const Nav = (props) => {
       </NavLink>
       <NavLink to="/pinneddestinations">
       <FontAwesomeIcon icon="sign-out-alt" /> 
-</NavLink>
-<NavLink to="/buddyPass">
-<FontAwesomeIcon icon="sign-out-alt" /> 
-</NavLink>
+      </NavLink>
+      <NavLink to="/buddyPass">
+        <FontAwesomeIcon icon="sign-out-alt" /> 
+        </NavLink>
       <NavLink to="/">
         <div onClick={props.handleLogOut} user={props.user}>
         <FontAwesomeIcon icon="sign-out-alt" /> 

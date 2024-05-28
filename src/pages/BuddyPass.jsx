@@ -1,7 +1,11 @@
 import React from 'react';
+import { useState } from "react";
 
 const BuddyPass = () => {
-  // component code here
+  return (
+    <div></div>
+  )
+  
 };
 
 export default BuddyPass;
