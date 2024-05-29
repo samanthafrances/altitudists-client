@@ -3,23 +3,23 @@ import { NavLink } from 'react-router-dom'
 import DestinationDetails from '../pages/DestinationDetails'
 import PinnedDestinations from '../pages/PinnedDestinations'
 import BuddyPass from '../pages/BuddyPass'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Icons from './icons'
 
 const Nav = (props) => {
   return (
     <nav>
       <NavLink to="/home">
-      <FontAwesomeIcon icon="sign-out-alt" /> 
+      <Icons icon="list" fill="white"/>
       </NavLink>
-      <NavLink to="/pinneddestinations">
-      <FontAwesomeIcon icon="sign-out-alt" /> 
+      <NavLink to="/destinationview">
+      <Icons icon="favorites" fill="white"/>
       </NavLink>
       <NavLink to="/buddyPass">
-        <FontAwesomeIcon icon="sign-out-alt" /> 
+      <Icons icon="ticket" fill="white"/>
         </NavLink>
       <NavLink to="/">
         <div onClick={props.handleLogOut} user={props.user}>
-        <FontAwesomeIcon icon="sign-out-alt" /> 
+        <Icons icon="logout" fill="white"/>
         </div>
       </NavLink>
     </nav>
