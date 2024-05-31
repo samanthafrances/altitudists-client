@@ -1,13 +1,10 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Client from "../services/api"
 import { Link } from "react-router-dom";
 import { SignInUser } from "../services/Auth";
 
 const LoginForm = (props) => {
   const navigation = useNavigate();
-  const [userInfo, setUserInfo] = useState();
 
   const [loginCredentials, setLoginCredentials] = useState({
     email: "",
@@ -15,7 +12,10 @@ const LoginForm = (props) => {
   });
 
   const handleInputChanges = (event) => {
-    setLoginCredentials({ ...loginCredentials, [event.target.name]: event.target.value });
+    setLoginCredentials({
+      ...loginCredentials,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const handleFormSubmission = async (event) => {
@@ -28,6 +28,7 @@ const LoginForm = (props) => {
 
       const response = await SignInUser(userLoginData);
 
+      // eslint-disable-next-line react/prop-types
       props.setUser(response);
       navigation("/");
     } catch (error) {

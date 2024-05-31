@@ -1,7 +1,6 @@
 import "./App.css";
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { Route, Routes, NavLink, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -44,17 +43,17 @@ function App() {
     <div className="App">
       {/* {user ? <Nav user={user} handleLogout={handleLogOut} /> : null } */}
       <Nav user={user} handleLogOut={handleLogOut} />
-      
-<Routes>
-  <Route path="/auth/login" element={<Login setUser={setUser} />} />
-  <Route path="/auth/register" element={<Register />} />
-  <Route path="/" element={app} />
-  <Route path="/home" element={<Home user={user}/>} />
-  <Route path="/destinations" element={<DestinationView />} />
-  <Route path="/destinations/:id" element={<DestinationDetails />} />
-  <Route path="/pinneddestinations" element={<PinnedDestinations />} />
-  <Route path="/buddypass" element={<BuddyPass />} />
-</Routes>
+
+      <Routes>
+        <Route path="/auth/login" element={<Login setUser={setUser} />} />
+        <Route path="/auth/register" element={<Register />} />
+        <Route path="/" element={app} />
+        <Route path="/home" element={<Home user={user} />} />
+        <Route path="/destinations" element={<DestinationView />} />
+        <Route path="/destinations/:id" element={<DestinationDetails />} />
+        <Route path="/pinneddestinations" element={<PinnedDestinations />} />
+        <Route path="/buddypass" element={<BuddyPass />} />
+      </Routes>
     </div>
   );
 }
