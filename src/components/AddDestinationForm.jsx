@@ -10,6 +10,7 @@ import {
   Input,
   FormControl,
   FormLabel,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BASE_URL } from "../services/api";
@@ -17,6 +18,7 @@ import axios from "axios";
 
 // eslint-disable-next-line react/prop-types
 export default function AddDestinationForm({ isOpen, onClose, cancelRef }) {
+  const toast = useToast();
   const [data, setData] = useState({ name: "", address: "", website: "" });
 
   const handleChange = (e, field) =>
@@ -24,13 +26,19 @@ export default function AddDestinationForm({ isOpen, onClose, cancelRef }) {
 
   const addDestination = async () => {
     const { name, address, website } = data;
-    let response;
     if (name || address || website) {
-      response = await axios.post(`${BASE_URL}/destination`, data);
+      let response = await axios.post(`${BASE_URL}/destination`, data);
+      if (response.status === 201) {
+        toast({
+          title: "Created",
+          description: "Destination created successfully",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
     }
-    if (response.status === 201) {
-      onClose();
-    }
+    onClose();
   };
 
   return (

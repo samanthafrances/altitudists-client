@@ -11,15 +11,17 @@ import {
   FormControl,
   FormLabel,
   Select,
+  useToast,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../services/api";
 import axios from "axios";
 
 // eslint-disable-next-line react/prop-types
-export default function AddBuddyPassForm({ isOpen, onClose, cancelRef }) {
+export default function AddBuddyPassForm({ isOpen, onClose, dialogRef }) {
   const [data, setData] = useState({ name: "", email: "", destination: "" });
   const [destinations, setDestinations] = useState([]);
+  const toast = useToast();
 
   const handleChange = (e, field) =>
     setData((prev) => ({ ...prev, [field]: e.target.value }));
@@ -34,19 +36,25 @@ export default function AddBuddyPassForm({ isOpen, onClose, cancelRef }) {
 
   const createBuddyPass = async () => {
     const { name, email, destination } = data;
-    let response;
     if (name || email || destination) {
-      response = await axios.post(`${BASE_URL}/buddyPass`, data);
+      let response = await axios.post(`${BASE_URL}/buddyPass`, data);
+      if (response?.status === 201) {
+        toast({
+          title: "Created",
+          description: "Buddy Pass created successfully",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
     }
-    if (response?.status === 201) {
-      onClose();
-    }
+    onClose();
   };
 
   return (
     <AlertDialog
       isOpen={isOpen}
-      leastDestructiveRef={cancelRef}
+      leastDestructiveRef={dialogRef}
       onClose={onClose}
     >
       <AlertDialogOverlay>
@@ -65,7 +73,7 @@ export default function AddBuddyPassForm({ isOpen, onClose, cancelRef }) {
               />
             </FormControl>
             <FormControl>
-              <FormLabel mt={4}>Location</FormLabel>
+              <FormLabel mt={4}>Email</FormLabel>
               <Input
                 value={data?.email}
                 onChange={(e) => handleChange(e, "email")}
@@ -75,7 +83,7 @@ export default function AddBuddyPassForm({ isOpen, onClose, cancelRef }) {
             <FormControl>
               <FormLabel mt={4}>Destination Suggestion</FormLabel>
               <Select
-                placeholder="Destination Suggestion"
+                placeholder="Select"
                 value={data?.destination}
                 onChange={(e) => handleChange(e, "destination")}
               >
@@ -92,7 +100,7 @@ export default function AddBuddyPassForm({ isOpen, onClose, cancelRef }) {
             <Button colorScheme="green" onClick={createBuddyPass} mr={3}>
               Save
             </Button>
-            <Button ref={cancelRef} onClick={onClose}>
+            <Button ref={dialogRef} onClick={onClose}>
               Cancel
             </Button>
           </AlertDialogFooter>
